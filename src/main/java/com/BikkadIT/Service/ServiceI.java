@@ -16,8 +16,6 @@ public interface ServiceI {
 	
 	public Employee getEmpById(int id);
 	
-	public Employee getEmpLessThan(int age);
-	
 	public Employee updateEmp(Employee employee);
 	
 	public List<Employee>updateMultiEmp(List<Employee> employee);
@@ -27,4 +25,6 @@ public interface ServiceI {
 	public boolean deleteById(int id);
 	
 	public void deleteAllEmp();
+
+	public List<Employee> employeesAge(int age);
 }

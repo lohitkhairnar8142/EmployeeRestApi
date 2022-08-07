@@ -11,7 +11,7 @@ public class ServiceIMPL implements ServiceI {
  
 	@Autowired
 	private EmpRepo empRepo;
-	private List<Employee> ;
+	
 	
 	@Override
 	public Employee saveEmployee(Employee employee) {
@@ -33,11 +33,6 @@ public class ServiceIMPL implements ServiceI {
 		return employee;
 	}
 
-	@Override
-	public Employee getEmpLessThan(int age) {
-       List<Employee> age1 = empRepo.findByEmpAgeLessThanEqual(age);
-		return age1;
-	}
 
 	@Override
 	public Employee updateEmp(Employee employee) {
@@ -75,6 +70,15 @@ public class ServiceIMPL implements ServiceI {
 		empRepo.deleteAll();
 		
 	}
+
+	@Override
+	public List<Employee> employeesAge(int age) {
+
+		List<Employee> lessThanEqual = empRepo.findByEmpAgeLessThanEqual(age);
+		return lessThanEqual;
+	}
+
+	
  
 	
 }
